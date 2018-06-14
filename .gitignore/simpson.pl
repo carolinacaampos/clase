@@ -14,6 +14,10 @@ hermanoConHijo(Alguien,Sobrino) :- esHermano(Alguien,Hermano) , esPadre(Hermano,
 
 esHijoUnico(Alguien) :- not(esHermano(Alguien,_))
 
+esHijoUnico(Alguien) :- 
+                    hijoDe(Alguien,_),
+                    not (esHermano(Alguien,_)).
+
 % hechos:
 esPadre(homero,bart).
 esPadre(homero,maggie).
